@@ -1,6 +1,8 @@
+import Expo from "expo";
+
 import React from "react";
 import PropTypes from "prop-types";
-import { StyleSheet, View } from "react-native";
+import { Platform, StyleSheet, View } from "react-native";
 import LoadingContainer from "react-native-loading-container";
 import ImageResizer from "../components/ImageResizer";
 
@@ -18,6 +20,11 @@ class ResultScreen extends React.Component {
     headerTintColor: "#fff",
     headerStyle: {
       backgroundColor: "#3f51b5",
+      ...Platform.select({
+        android: {
+          marginTop: -Expo.Constants.statusBarHeight,
+        },
+      }),
     },
     headerPressColorAndroid: "rgba(255, 255, 255, 0.2)",
   };
