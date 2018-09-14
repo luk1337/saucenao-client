@@ -56,7 +56,7 @@ class ResultList extends React.Component {
         data={this.props.data}
         ListHeaderComponent={this.renderHeader}
         renderItem={this.renderItem}
-        keyExtractor={(item, index) => index}
+        keyExtractor={(item, index) => index.toString()}
       />
     );
   }
